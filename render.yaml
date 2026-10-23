@@ -1,0 +1,12 @@
+# Déploiement en un clic sur Render (render.com → New → Blueprint)
+services:
+  - type: web
+    name: prisme
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: MAX_FILE_MB
+        value: "500"
+      - key: FILE_TTL_MIN
+        value: "60"

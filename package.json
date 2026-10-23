@@ -1,0 +1,28 @@
+{
+  "name": "prisme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Convertir et compresser n'importe quel fichier, en local.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "express": "^4.21.2",
+    "fast-xml-parser": "^4.5.0",
+    "ffmpeg-static": "^5.2.0",
+    "heic-convert": "^2.1.0",
+    "js-yaml": "^4.1.0",
+    "mammoth": "^1.8.0",
+    "marked": "^12.0.2",
+    "multer": "^2.0.2",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "1.1.1",
+    "pdfkit": "^0.15.0",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
+    "turndown": "^7.2.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}
