@@ -107,7 +107,8 @@ function dropJob(id) {
 }
 
 /* ---------- routes ---------- */
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: PUBLIC ? '1h' : 0 }));
+// Le navigateur revalide à chaque visite (réponse 304 légère) : une mise à jour est visible tout de suite.
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 0 }));
 
 app.get('/healthz', (req, res) => res.send('ok'));
 
