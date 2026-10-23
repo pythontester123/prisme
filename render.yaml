@@ -1,6 +1,6 @@
 # Déploiement sur Render (render.com → New → Blueprint)
 # Offre gratuite : le site s'endort après 15 min sans visite et dispose de 512 Mo de mémoire.
-# Les limites ci-dessous évitent de saturer cette petite machine.
+# Les réglages ci-dessous évitent de saturer cette petite machine.
 services:
   - type: web
     name: prisme
@@ -9,12 +9,14 @@ services:
     healthCheckPath: /healthz
     envVars:
       - key: MAX_FILE_MB
-        value: "100"
+        value: "500"
       - key: MAX_PARALLEL
         value: "1"
       - key: MAX_QUEUE
         value: "10"
       - key: JOB_TIMEOUT_MIN
-        value: "10"
+        value: "30"
+      - key: SEVENZ_DICT_MB
+        value: "16"
       - key: FILE_TTL_MIN
         value: "60"
