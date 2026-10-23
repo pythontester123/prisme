@@ -597,7 +597,7 @@ async function init() {
     const l = state.caps.limits;
     if (l) {
       $('#foot').textContent = l.public
-        ? `Jusqu’à ${l.maxFileMB >= 1024 ? `${Math.round(l.maxFileMB / 1024)} Go` : `${l.maxFileMB} Mo`} par fichier. Tes fichiers sont supprimés automatiquement au bout de ${l.ttlMin >= 60 ? plural(Math.round(l.ttlMin / 60), 'heure') : `${l.ttlMin} minutes`}, et personne d’autre n’y a accès.`
+        ? `Jusqu’à ${l.maxFileMB >= 1024 ? `${Math.round(l.maxFileMB / 1024)} Go` : `${l.maxFileMB} Mo`} par fichier. Tes fichiers sont supprimés automatiquement au bout ${l.ttlMin === 60 ? 'd’une heure' : l.ttlMin > 60 && l.ttlMin % 60 === 0 ? `de ${l.ttlMin / 60} heures` : `de ${l.ttlMin} minutes`}, et personne d’autre n’y a accès.`
         : 'Tout reste sur ton ordinateur. Rien n’est envoyé sur internet.';
     }
   } catch {
