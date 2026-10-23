@@ -1,12 +1,20 @@
-# Déploiement en un clic sur Render (render.com → New → Blueprint)
+# Déploiement sur Render (render.com → New → Blueprint)
+# Offre gratuite : le site s'endort après 15 min sans visite et dispose de 512 Mo de mémoire.
+# Les limites ci-dessous évitent de saturer cette petite machine.
 services:
   - type: web
     name: prisme
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /healthz
     envVars:
       - key: MAX_FILE_MB
-        value: "500"
+        value: "100"
+      - key: MAX_PARALLEL
+        value: "1"
+      - key: MAX_QUEUE
+        value: "10"
+      - key: JOB_TIMEOUT_MIN
+        value: "10"
       - key: FILE_TTL_MIN
         value: "60"

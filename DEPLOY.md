@@ -8,8 +8,9 @@ Prisme est prêt à être hébergé : tout est dans le `Dockerfile` (ffmpeg, 7-Z
 2. Sur [render.com](https://render.com) : **New → Blueprint**, choisis le dépôt. Render lit `render.yaml` et construit l'image tout seul.
 3. Une fois en ligne, ajoute ton nom de domaine dans **Settings → Custom Domains**. Le HTTPS est automatique.
 
-Prends au moins l'offre **Starter** : l'offre gratuite se met en veille et manque de mémoire pour la vidéo et LibreOffice.
-Pour beaucoup de vidéos, vise 2 Go de RAM ou plus.
+`render.yaml` utilise l'**offre gratuite** : le site s'endort après 15 min sans visite (premier chargement ~1 min ensuite), 512 Mo de mémoire, 100 Mo max par fichier, un traitement à la fois.
+Parfait pour images, audio, documents et tableurs ; les grosses vidéos seront lentes.
+Pour plus de puissance, passe `plan: free` à `plan: starter` (payant) et remonte `MAX_FILE_MB` / `MAX_PARALLEL`.
 
 ## Autres hébergeurs
 
